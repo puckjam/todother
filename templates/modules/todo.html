@@ -1,0 +1,8 @@
+<div class="entry">
+  <h1><a href="/todo/{{ entry.todo_slug }}">{{ entry.todo_slug }}</a></h1>
+  <div class="date">{{ entry.todo_created_date }}</div>
+  <div class="body">{% raw entry.todo_do %} {% raw entry.todo_where %} {%raw entry.todo_what %} at {% raw entry.todo_when %}</div>
+  {% if current_user %}
+    <div class="admin"><a href="/todo_compose?id={{ entry.todo_id }}">{{ _("Edit this Todo") }}</a></div>
+  {% end %}
+</div>
